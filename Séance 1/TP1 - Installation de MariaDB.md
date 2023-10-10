@@ -13,7 +13,7 @@
    - Rendez-vous sur le site officiel de MariaDB pour télécharger l'installeur pour Windows : [MariaDB Downloads](https://downloads.mariadb.org/)
    - Choisissez la version appropriée et téléchargez-la.
    - Exécutez l'installeur et suivez les instructions à l'écran.
-   - Vérifiez l'installation en ouvrant la ligne de commande et en tapant `mariadb --version`. Vous devriez voir le numéro de version affiché. 🎉
+   - Vérifiez l'installation en ouvrant la ligne de commande et en tapant `mysql --version`. Vous devriez voir le numéro de version affiché. 🎉
 
 2. **Système Linux (basé sur Debian/Ubuntu)**:
    ```bash
@@ -23,7 +23,7 @@
    sudo mysql_secure_installation
    ```
    - Après avoir exécuté `mysql_secure_installation`, suivez les instructions à l'écran.
-   - Vérifiez l'installation avec : `mariadb --version`. Si tout va bien, la version devrait s'afficher. 🐧
+   - Vérifiez l'installation avec : `mysql --version`. Si tout va bien, la version devrait s'afficher. 🐧
 
 3. **Système macOS**:
    - Si vous avez Homebrew, utilisez :
@@ -33,7 +33,7 @@
      brew services start mariadb
      ```
    - Sinon, allez sur le site officiel de MariaDB pour télécharger l'installeur pour macOS.
-   - Vérifiez l'installation en ouvrant le terminal et en tapant `mariadb --version`. Vous devriez voir le numéro de version. 🍏
+   - Vérifiez l'installation en ouvrant le terminal et en tapant `mysql --version`. Vous devriez voir le numéro de version. 🍏
 
 4. Pour les autres systèmes d'exploitation, consultez la documentation officielle de MariaDB pour des instructions détaillées.
 
