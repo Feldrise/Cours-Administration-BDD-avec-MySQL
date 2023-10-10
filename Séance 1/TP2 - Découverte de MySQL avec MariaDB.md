@@ -117,7 +117,7 @@
         id_cours INT,
         date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_etudiant) REFERENCES etudiants(id),
-        FOREIGN KEY (id_cours) REFERENCES cours(id_cours)
+        FOREIGN KEY (id_cours) REFERENCES cours(id)
     );
     ```
 
