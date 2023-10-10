@@ -175,7 +175,7 @@ J'espère que cette partie a éclairci le processus de création de tables et la
 3. **Insertion de cours**
     Exemple :
     ```sql
-    INSERT INTO cours (nom_cours, id_professeur)
+    INSERT INTO cours (nom_cours, description)
     VALUES ('Programmation en C', 'Un super cours sur un des plus ancien langage encore actif'),
            ('Analyse mathématique', 'Des maths, on vous vois les dev qui veulent juste fuires 😉');
     ```
