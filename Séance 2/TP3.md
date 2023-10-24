@@ -13,11 +13,7 @@
 1. **Identification du fichier de configuration**
    - Ouvrez le fichier de configuration MySQL, généralement situé à:
      ```bash
-     /etc/my.cnf
-     ```
-     ou sur certains systèmes:
-     ```bash
-     /etc/mysql/my.ini
+     /etc/mysql/my.cnf
      ```
    - Jetez un coup d'œil aux différentes sections et paramètres disponibles. 🧐
 
@@ -26,6 +22,8 @@
      ```bash
      innodb_buffer_pool_size = 512M
      ```
+   > NOTE : Vous devez peut-être ajouter vous même la section en bas du fichier
+
    - Cet exemple fixe la mémoire tampon à 512 Mo. Vous pouvez ajuster cette valeur en fonction de vos besoins! 😊
 
 3. **Ajustement du nombre maximum de connexions**
@@ -69,93 +67,7 @@
 
 3. Comparez les valeurs obtenues avec celles que vous avez configurées. Tout est bon? Bravo! 🎉
 
----
-
-## Partie 3: Gestion du Journal des Requêtes Lentes 🐢
-
-### Objectifs:
-- Découvrir et activer le journal des requêtes lentes.
-- Identifier et corriger les requêtes potentiellement problématiques.
-
-### Étapes:
-
-1. **Activation du Journal des Requêtes Lentes**
-   - Dans votre fichier de configuration MySQL, sous la section `[mysqld]`, ajoutez ou modifiez les lignes suivantes :
-     ```bash
-     slow_query_log = 1
-     slow_query_log_file = /var/log/mysql-slow.log
-     long_query_time = 2
-     ```
-   - Cela activera le journal des requêtes lentes, enregistrant toutes les requêtes qui prennent plus de 2 secondes pour s'exécuter.
-
-2. **Redémarrez MySQL** pour que les changements prennent effet.
-
-3. **Analyse des Requêtes Lentes**
-   - Une fois quelques requêtes enregistrées, ouvrez le fichier `/var/log/mysql-slow.log`.
-   - Identifiez quelques requêtes qui y sont enregistrées. Pourquoi pensez-vous qu'elles sont lentes ?
-
-4. **Optimisation des Requêtes**
-   - Choisissez une des requêtes lentes et essayez de l'optimiser. Pourriez-vous ajouter des index ? La requête pourrait-elle être réécrite pour être plus efficace ?
-
----
-
-## Partie 4: Sécurité et Utilisateurs ⛔
-
-### Objectifs:
-- Découvrir comment créer, modifier et supprimer des utilisateurs.
-- Configurer des permissions appropriées pour chaque utilisateur.
-
-### Étapes:
-
-1. **Création d'un Nouvel Utilisateur**
-   - Connectez-vous à MySQL et exécutez la commande suivante pour créer un nouvel utilisateur :
-     ```sql
-     CREATE USER 'nouvel_utilisateur'@'localhost' IDENTIFIED BY 'mot_de_passe';
-     ```
-
-2. **Attribution des Permissions**
-   - Attribuez des permissions à votre nouvel utilisateur :
-     ```sql
-     GRANT SELECT, INSERT ON *.* TO 'nouvel_utilisateur'@'localhost';
-     ```
-
-3. **Vérification des Permissions**
-   - Connectez-vous à MySQL avec le nouvel utilisateur et essayez d'exécuter différentes requêtes. Quelles opérations sont autorisées? Lesquelles sont interdites?
-
-4. **Modification des Permissions**
-   - Reconnectez-vous avec l'utilisateur root. Revoquez l'autorisation INSERT de l'utilisateur précédemment créé :
-     ```sql
-     REVOKE INSERT ON *.* FROM 'nouvel_utilisateur'@'localhost';
-     ```
-
-5. **Suppression de l'Utilisateur**
-   - Une fois que vous avez terminé avec l'utilisateur, supprimez-le :
-     ```sql
-     DROP USER 'nouvel_utilisateur'@'localhost';
-     ```
-
----
-
-## Partie 5: Tests de Charge 🔄
-**Durée estimée:** 30 minutes
-
-### Objectifs:
-- Évaluer comment MySQL réagit sous des charges élevées.
-- Identifier et corriger les goulets d'étranglement.
-
-### Étapes:
-
-1. **Création d'un Script de Test**
-   - Utilisez un outil de votre choix (comme Apache JMeter ou MySQL Workbench) pour générer un grand nombre de requêtes simultanées vers votre base de données.
-
-2. **Exécution du Script**
-   - Lancez le script et observez la charge sur votre serveur MySQL. Utilisez des outils comme `htop` ou `top` pour surveiller les ressources système.
-
-3. **Analyse des Résultats**
-   - Quelles requêtes sont les plus lentes? Y a-t-il des erreurs ou des refus de connexions?
-
-4. **Optimisation**
-   - Apportez des modifications à la configuration de votre serveur MySQL pour tenter d'améliorer les performances sous une charge élevée.
+--- 
 
 ## Partie 3: 🎖️
 **Durée estimée:** 15 minutes
