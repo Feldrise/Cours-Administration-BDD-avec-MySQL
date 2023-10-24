@@ -94,7 +94,7 @@ MySQL dispose également d'un journal des erreurs qui enregistre les problèmes 
      ```
    - Recherchez cette erreur dans le journal des erreurs. Que pouvez-vous apprendre de cette entrée ?
 
-### Exercice 6: Niveaux de Gravité des Journaux
+### Exercice 5: Niveaux de Gravité des Journaux
 
 MySQL permet de définir différents niveaux de gravité pour le journal des erreurs.
 
@@ -118,7 +118,7 @@ MySQL permet de définir différents niveaux de gravité pour le journal des err
 
 🌠 Ces exercices supplémentaires visent à renforcer votre compréhension de la gestion des journaux avec MySQL. L'examen régulier des journaux et la compréhension de leur contenu peuvent être cruciaux pour l'administration, le dépannage et la sécurité de votre base de données. 🌠
 
-### Exercice 3: Désactivation des Journaux
+### Exercice 6: Désactivation des Journaux
 
 1. **Désactivation du journal général**
    - Désactivez le journal général en modifiant le fichier de configuration:
@@ -140,41 +140,6 @@ MySQL permet de définir différents niveaux de gravité pour le journal des err
 ---
 
 🚀 Après avoir terminé ces exercices, partagez vos réflexions et découvertes avec vos pairs. La discussion aidera à renforcer ce que vous avez appris et à découvrir de nouvelles perspectives. 🚀
-
----
-
-## Tâches d’Administration Courantes
-**Durée estimée:** 2h
-
-### Objectifs
-- Se familiariser avec les tâches d'administration de base.
-- Comprendre comment gérer les utilisateurs, les permissions et optimiser la BDD.
-
-### Étapes
-1. **Gestion des utilisateurs**
-   - Créez un nouvel utilisateur:
-     ```sql
-     CREATE USER 'nouvel_utilisateur'@'localhost' IDENTIFIED BY 'mot_de_passe';
-     ```
-   - 🚀 Rappelez-vous de toujours utiliser des mots de passe forts!
-   
-2. **Gestion des permissions**
-   - Accordez à l'utilisateur précédemment créé des privilèges sur une base de données spécifique:
-     ```sql
-     GRANT ALL PRIVILEGES ON nom_base_de_donnees.* TO 'nouvel_utilisateur'@'localhost';
-     ```
-   - Vérifiez les privilèges d'un utilisateur:
-     ```sql
-     SHOW GRANTS FOR 'nouvel_utilisateur'@'localhost';
-     ```
-   - 👍 Bonne pratique: N'accordez que les privilèges nécessaires, évitez d'utiliser `ALL PRIVILEGES` sauf si c'est vraiment nécessaire.
-
-3. **Optimisation de la base de données**
-   - Utilisez la commande `OPTIMIZE TABLE` pour optimiser une table particulière:
-     ```sql
-     OPTIMIZE TABLE nom_table;
-     ```
-   - 😁 Ceci peut aider à améliorer les performances, surtout après avoir supprimé un grand nombre de lignes d'une table!
 
 ---
 
